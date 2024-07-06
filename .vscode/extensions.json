@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "yoavbls.pretty-ts-errors",
+    "aaron-bond.better-comments",
+    "DavidAnson.vscode-markdownlint",
+    "usernamehw.errorlens"
+  ],
+  "unwantedRecommendations": []
+}
