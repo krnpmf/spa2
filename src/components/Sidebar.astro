@@ -1,0 +1,40 @@
+---
+import { type HTMLTag } from "astro/types";
+import PageLink from "./PageLink.astro";
+import Link from "./Link.astro";
+import { data } from "../config";
+
+const addBetween = (
+  elems: string[],
+  element: HTMLTag,
+): (string | HTMLTag)[] => {
+  let index = 1;
+  const count = elems.length - 1;
+  for (let i = 0; i < count; i++) {
+    elems.splice(index, 0, element);
+  }
+  return elems;
+};
+
+const title = addBetween(data.title, <br />);
+---
+
+<nav class="flex flex-col space-y-8 p-4 bg-gray-100 w-64 h-dvh text-lg">
+  <div>
+    <h1 class="text-red-600 font-bold">{data.code}</h1>
+    <h2>{title}</h2>
+  </div>
+  <div class="flex flex-col text-neutral-500">
+    <PageLink path="/">Početna</PageLink>
+    <PageLink path="/predavanja">Predavanja</PageLink>
+    <PageLink path="/teorijske">Teorijske vežbe</PageLink>
+    <PageLink path="/prakticne">Praktične vežbe</PageLink>
+  </div>
+  <div class="flex flex-col text-neutral-500">
+    <Link href={data.syllabus} new-tab>Moodle</Link>
+    <PageLink path="/plan">Plan rada</PageLink>
+    <PageLink path="/osoblje">Osoblje</PageLink>
+    <PageLink path="/pravila">Pravila polaganja</PageLink>
+    <PageLink path="/resursi">Resursi</PageLink>
+  </div>
+</nav>

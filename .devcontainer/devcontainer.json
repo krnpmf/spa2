@@ -9,7 +9,9 @@
 				"yoavbls.pretty-ts-errors",
 				"aaron-bond.better-comments",
 				"DavidAnson.vscode-markdownlint",
-				"usernamehw.errorlens"
+				"usernamehw.errorlens",
+				"bradlc.vscode-tailwindcss",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}
