@@ -1,0 +1,30 @@
+on:
+  push:
+    paths:
+      - src/**
+  pull_request:
+    paths:
+      - src/**
+  workflow_dispatch:
+
+jobs:
+  astro-check:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      - run: npx astro check
+  prettier:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm ci
+      - run: npx prettier --check src/
