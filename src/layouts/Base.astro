@@ -1,14 +1,17 @@
 ---
 import "../styles/base.css";
 import Sidebar from "../components/Sidebar.astro";
-import { type PageKeys } from "../ts/types";
+import { data } from "../config";
 
 interface Props {
   title: string;
-  key: PageKeys;
+  frontmatter: {
+    title: string;
+  };
 }
 
-const { title, key } = Astro.props;
+const { title } = Astro.props.frontmatter || Astro.props;
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -22,9 +25,14 @@ const { title, key } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="flex">
-    <Sidebar key={key} />
-    <div class="p-4">
-      <slot />
+    <Sidebar />
+    <div class="p-8">
+      <h1 class="text-department text-3xl font-bold">
+        {pathname == "/" ? data.title.join(" ") : title}
+      </h1>
+      <div class="prose mt-8">
+        <slot />
+      </div>
     </div>
   </body>
 </html>
