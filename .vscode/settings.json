@@ -14,5 +14,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.trailingComma": "all",
-  "typescript.inlayHints.parameterNames.enabled": "all"
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "editor.tabSize": 2
 }
