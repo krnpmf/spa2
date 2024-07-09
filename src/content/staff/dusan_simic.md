@@ -7,4 +7,5 @@ contact: dusan.simic@dmi.uns.ac.rs
 officeHours: po potrebi zakazivanjem
 group:
   - pv
+order: 1
 ---

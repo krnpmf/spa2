@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Link from "./Link.astro";
+import svgEnvelope from "../assets/envelope.svg";
 
 interface Props {
   image: ImageMetadata;
@@ -19,7 +20,18 @@ const { image, name, url, position, contact, officeHours } = Astro.props;
   <div class="flex flex-col align-top">
     <Link href={url} new-tab>{name}</Link>
     <span class="text-sm text-gray-500">{position}</span>
-    <div>{contact}</div>
+    <div class="flex space-x-1">
+      <span>
+        {contact}
+      </span>
+      <a href=`mailto:${contact}` class="flex flex-col justify-center">
+        <img
+          src={svgEnvelope.src}
+          alt="Send email"
+          class="aspect-square w-4 m-0"
+        />
+      </a>
+    </div>
     <div><i>Konsultacije:</i> {officeHours}</div>
   </div>
 </div>

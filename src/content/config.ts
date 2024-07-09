@@ -12,7 +12,8 @@ const staff = defineCollection({
       position: z.string(),
       contact: z.string(),
       officeHours: z.string(),
-      group: z.array(z.string()),
+      group: z.array(z.enum(["p", "tv", "pv"])),
+      order: z.number().optional(),
     }),
 });
 
