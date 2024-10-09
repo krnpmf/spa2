@@ -2,6 +2,9 @@
 import PageLink from "./PageLink.astro";
 import Link from "./Link.astro";
 import { data } from "../config";
+
+// TODO: Figure this out
+const base = "/spa2";
 ---
 
 <nav class="flex flex-col space-y-8 p-4 bg-gray-100 w-64 h-dvh text-lg">
@@ -20,16 +23,16 @@ import { data } from "../config";
     </h2>
   </div>
   <div class="flex flex-col text-neutral-500">
-    <PageLink path="/">Početna</PageLink>
-    <PageLink path="/predavanja">Predavanja</PageLink>
-    <PageLink path="/teorijske">Teorijske vežbe</PageLink>
-    <PageLink path="/prakticne">Praktične vežbe</PageLink>
+    <PageLink path=`${base}`>Početna</PageLink>
+    <PageLink path=`${base}/predavanja`>Predavanja</PageLink>
+    <PageLink path=`${base}/teorijske`>Teorijske vežbe</PageLink>
+    <PageLink path=`${base}/prakticne`>Praktične vežbe</PageLink>
   </div>
   <div class="flex flex-col text-neutral-500">
     <Link href={data.syllabus} new-tab>Moodle</Link>
-    <PageLink path="/plan">Plan rada</PageLink>
-    <PageLink path="/osoblje">Osoblje</PageLink>
-    <PageLink path="/pravila">Pravila polaganja</PageLink>
-    <PageLink path="/resursi">Resursi</PageLink>
+    <PageLink path=`${base}/plan`>Plan rada</PageLink>
+    <PageLink path=`${base}/osoblje`>Osoblje</PageLink>
+    <PageLink path=`${base}/pravila`>Pravila polaganja</PageLink>
+    <PageLink path=`${base}/resursi`>Resursi</PageLink>
   </div>
 </nav>
