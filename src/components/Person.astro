@@ -1,16 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Link from "./Link.astro";
-import svgEnvelope from "../assets/envelope.svg";
+import svgEnvelope from "@assets/envelope.svg";
+import { type Person } from "@content/config";
 
-interface Props {
-  image: ImageMetadata;
-  name: string;
-  url: string;
-  position: string;
-  contact: string;
-  officeHours: string;
-}
+interface Props extends Person {}
 
 const { image, name, url, position, contact, officeHours } = Astro.props;
 ---

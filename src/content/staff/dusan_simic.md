@@ -1,4 +1,5 @@
 ---
+id: dusan_simic
 name: Dušan Simić
 url: https://dusansimic.me
 image: "@assets/dusan_simic.png"
