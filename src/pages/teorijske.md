@@ -3,4 +3,4 @@ layout: ../layouts/Base.astro
 title: Teorijske vežbe
 ---
 
-Teorijske vežbe
+Više informacija na Moodle stranici kursa.
