@@ -7,7 +7,9 @@ import { data } from "../config";
 const base = "/spa2";
 ---
 
-<nav class="flex flex-col space-y-8 p-4 bg-gray-100 w-64 h-dvh text-lg">
+<nav
+  class="flex flex-col space-y-8 p-4 bg-gray-100 w-full md:w-64 md:h-dvh text-lg md:fixed md:top-0 md:left-0"
+>
   <div>
     <h1 class="text-department font-bold">{data.code}</h1>
     <h2>

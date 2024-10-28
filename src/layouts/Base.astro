@@ -24,9 +24,9 @@ const { pathname } = Astro.url;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="flex">
+  <body class="flex flex-col">
     <Sidebar />
-    <div class="p-8">
+    <div class="p-4 md:p-8 md:pl-[18rem]">
       <h1 class="text-department text-3xl font-bold">
         {pathname == "/" ? data.title.join(" ") : title}
       </h1>
