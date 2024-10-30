@@ -11,7 +11,8 @@
 				"DavidAnson.vscode-markdownlint",
 				"usernamehw.errorlens",
 				"bradlc.vscode-tailwindcss",
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"unifiedjs.vscode-mdx"
 			]
 		}
 	}
