@@ -6,14 +6,13 @@ import { type Person } from "@content/config";
 
 interface Props extends Person {}
 
-const { image, name, url, position, contact, officeHours } = Astro.props;
+const { image, name, url, contact, officeHours } = Astro.props;
 ---
 
 <div class="flex space-x-2">
   <Image src={image} alt="Profile image" width={100} class="m-0" />
   <div class="flex flex-col align-top">
     <Link href={url} new-tab>{name}</Link>
-    <span class="text-sm text-gray-500">{position}</span>
     <div class="flex space-x-1">
       <span>
         {contact}
