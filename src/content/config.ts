@@ -5,7 +5,6 @@ const ZodPerson = z.object({
   id: z.string(),
   name: z.string(),
   url: z.string(),
-  position: z.string(),
   contact: z.string(),
   officeHours: z.string(),
   group: z.array(z.enum(["p", "tv", "pv"])),

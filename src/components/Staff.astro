@@ -16,26 +16,32 @@ const staffPractical = await getCollection("staff", (person) =>
 <h3 id="predavanja">Predavanja</h3>
 <div class="flex flex-col space-y-8">
   {
-    staffLecture
-      .sort((a, b) => a.data.order - b.data.order)
-      .map((person) => <Person {...person.data} />)
+    staffLecture.length > 0
+      ? staffLecture
+          .sort((a, b) => a.data.order - b.data.order)
+          .map((person) => <Person {...person.data} />)
+      : undefined
   }
 </div>
 
 <h3 id="teorijske-vezbe">Teorijske vežbe</h3>
 <div class="flex flex-col space-y-8">
   {
-    staffTheoretical
-      .sort((a, b) => a.data.order - b.data.order)
-      .map((person) => <Person {...person.data} />)
+    staffTheoretical.length > 0
+      ? staffTheoretical
+          .sort((a, b) => a.data.order - b.data.order)
+          .map((person) => <Person {...person.data} />)
+      : undefined
   }
 </div>
 
 <h3 id="prakticne-vezbe">Praktične vežbe</h3>
 <div class="flex flex-col space-y-8">
   {
-    staffPractical
-      .sort((a, b) => a.data.order - b.data.order)
-      .map((person) => <Person {...person.data} />)
+    staffPractical.length > 0
+      ? staffPractical
+          .sort((a, b) => a.data.order - b.data.order)
+          .map((person) => <Person {...person.data} />)
+      : undefined
   }
 </div>
