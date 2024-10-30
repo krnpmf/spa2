@@ -13,35 +13,47 @@ const staffPractical = await getCollection("staff", (person) =>
 );
 ---
 
-<h3 id="predavanja">Predavanja</h3>
-<div class="flex flex-col space-y-8">
-  {
-    staffLecture.length > 0
-      ? staffLecture
+{
+  staffLecture.length > 0 ? (
+    <>
+      <h3 id="predavanja">Predavanja</h3>
+      <div class="flex flex-col space-y-8">
+        {staffLecture
           .sort((a, b) => a.data.order - b.data.order)
-          .map((person) => <Person {...person.data} />)
-      : undefined
-  }
-</div>
+          .map((person) => (
+            <Person {...person.data} />
+          ))}
+      </div>
+    </>
+  ) : undefined
+}
 
-<h3 id="teorijske-vezbe">Teorijske vežbe</h3>
-<div class="flex flex-col space-y-8">
-  {
-    staffTheoretical.length > 0
-      ? staffTheoretical
+{
+  staffLecture.length > 0 ? (
+    <>
+      <h3 id="teorijske-vezbe">Teorijske vežbe</h3>
+      <div class="flex flex-col space-y-8">
+        {staffTheoretical
           .sort((a, b) => a.data.order - b.data.order)
-          .map((person) => <Person {...person.data} />)
-      : undefined
-  }
-</div>
+          .map((person) => (
+            <Person {...person.data} />
+          ))}
+      </div>
+    </>
+  ) : undefined
+}
 
-<h3 id="prakticne-vezbe">Praktične vežbe</h3>
-<div class="flex flex-col space-y-8">
-  {
-    staffPractical.length > 0
-      ? staffPractical
+{
+  staffPractical.length > 0 ? (
+    <>
+      <h3 id="prakticne-vezbe">Praktične vežbe</h3>
+      <div class="flex flex-col space-y-8">
+        {staffPractical
           .sort((a, b) => a.data.order - b.data.order)
-          .map((person) => <Person {...person.data} />)
-      : undefined
-  }
-</div>
+          .map((person) => (
+            <Person {...person.data} />
+          ))}
+      </div>
+    </>
+  ) : undefined
+}
